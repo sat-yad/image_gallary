@@ -2,7 +2,6 @@ const cards = document.querySelectorAll(".Card");
 
 document.addEventListener("DOMContentLoaded", function () {
   const leftNavLinks = document.querySelectorAll(".left-navbar a");
-
   leftNavLinks.forEach((link) => {
     link.addEventListener("click", function (event) {
       event.preventDefault();
@@ -12,16 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-// document.addEventListener("DOMContentLoaded", function () {
-//   const container = document.querySelector(".container");
-//   const navbar = document.querySelector(".left-navbar");
-
-//   container.addEventListener("scroll", function () {
-//     const scrollPos = this.scrollLeft;
-//     navbar.style.left = `${scrollPos}px`;
-//   });
-// });
-
 const showCardImage = (card) => {
   const images = card.querySelectorAll(".galleryImage");
   const figcaptions = card.querySelectorAll("figcaption");
