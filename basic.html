@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="container">
+        <h2>75 Hard Day challenge</h2>
+        <div class="Gallery">
+          <div class="Card" id="imageCard">
+            <img src="Day-1.jpg" alt="Day 1" class="galleryImage" />
+            <img src="Day-2.jpg" alt="Day 2" class="galleryImage" />
+            <!-- Add more images as needed -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // JavaScript for manual image cycling
+      const images = document.querySelectorAll(".galleryImage");
+      let currentIndex = 0;
+
+      // Function to show the current image
+      const showImage = (index) => {
+        images.forEach((image, i) => {
+          if (i === index) {
+            image.style.display = "block";
+          } else {
+            image.style.display = "none";
+          }
+        });
+      };
+
+      // Event listeners for each image to switch to the next image upon click
+      images.forEach((image, index) => {
+        image.addEventListener("click", () => {
+          currentIndex =
+            currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+          showImage(currentIndex);
+        });
+      });
+
+      // Show the initial image
+      showImage(currentIndex);
+    </script>
+  </body>
+</html>
